@@ -21,9 +21,7 @@ This repo is a fork of [autovc](https://github.com/auspicious3000/autovc) and it
 - (matplotlib ?)
 
 ## Pre-trained models
-
-| AUTOVC | Speaker Encoder | WaveNet Vocoder |
-|----------------|----------------|----------------|
-| [link](https://drive.google.com/file/d/1SZPPnWAgpGrh0gQ7bXQJXXjOntbh4hmz/view?usp=sharing)| [link](https://drive.google.com/file/d/1ORAeb4DlS_65WDkQN6LHx5dPyCM5PAVV/view?usp=sharing) | [link](https://drive.google.com/file/d/1Zksy0ndlDezo9wclQNZYkGi_6i7zi4nQ/view?usp=sharing) |
-
+* [AUTOVC](https://github.com/nicolalandro/autovc/releases/download/0.1/autovc.ckpt)
+* [Speacker Encoder](https://github.com/nicolalandro/autovc/releases/download/0.1/3000000-BL.ckpt)
+* [WaveNet Vocoder](https://github.com/nicolalandro/autovc/releases/download/0.1/checkpoint_step001000000_ema.pth)
 
