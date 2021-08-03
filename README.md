@@ -6,7 +6,8 @@ This repo is a fork of [AUTOVC: Zero-Shot Voice Style Transfer with Only Autoenc
 It aim to write an easy usable demo of this models.
 
 ## Run Notebooks
-* Use local
+* Open on Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nicolalandro/autovc/blob/master
+* Use in local environment (with GPU: cuda):
   * Install dependencies
   * clone the project
   * download models into cloned folder
