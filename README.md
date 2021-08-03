@@ -1,11 +1,17 @@
-# AUTOVC: Zero-Shot Voice Style Transfer with Only Autoencoder Loss
-This repo is a fork of [autovc](https://github.com/auspicious3000/autovc) and it aim to write a usable demo of this models.
+[![License: MIT](https://img.shields.io/badge/license-MIT-lightgray)](LICENSE) 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/nicolalandro/autovc/blob/master/Demo.ipynb)
+
+# AUTOVC
+This repo is a fork of [AUTOVC: Zero-Shot Voice Style Transfer with Only Autoencoder Loss](https://github.com/auspicious3000/autovc). 
+It aim to write an easy usable demo of this models.
 
 ## Run Notebooks
-- Install dependencies
-- download models
-- run jupyter
-- Demo.ipynb: take two audio and generate the new one with the voice of the second and the words of the first
+* Use local
+  * Install dependencies
+  * clone the project
+  * download models into cloned folder
+  * run jupyter
+  * Demo.ipynb: take two audio and generate the new one with the voice of the second and the words of the first
 
 ## Dependencies
 - Python 3
