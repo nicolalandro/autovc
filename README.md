@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgray)](LICENSE) 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nicolalandro/autovc/blob/master/Demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nicolalandro/autovc/blob/master/AutoVCDemoColab.ipynb)
 
 # AUTOVC
 This repo is a fork of [AUTOVC: Zero-Shot Voice Style Transfer with Only Autoencoder Loss](https://github.com/auspicious3000/autovc). 
