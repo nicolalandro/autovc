@@ -1,0 +1,6 @@
+__pycache__
+.ipynb_checkpoints/
+*.ckpt
+*.pth
+output
+a_b.wav
