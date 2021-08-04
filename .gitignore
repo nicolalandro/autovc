@@ -2,5 +2,7 @@ __pycache__
 .ipynb_checkpoints/
 *.ckpt
 *.pth
+*.pyc
 output
 a_b.wav
+spmel
