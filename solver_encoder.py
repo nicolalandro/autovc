@@ -19,7 +19,10 @@ class Solver(object):
         self.dim_emb = config.dim_emb
         self.dim_pre = config.dim_pre
         self.freq = config.freq
+        
+        # load and save path configurations.
         self.pretrained = config.pretrained
+        self.outfile_path = config.outfile_path
 
         # Training configurations.
         self.batch_size = config.batch_size
@@ -123,7 +126,7 @@ class Solver(object):
                     log += ", {}: {:.4f}".format(tag, loss[tag])
                 print(log)
         print('saving model...')
-        torch.save(self.G.state_dict(),'generator.pth')
+        torch.save(self.G.state_dict(), self.outfile_path)
                 
 
     

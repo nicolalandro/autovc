@@ -41,6 +41,7 @@ if __name__ == '__main__':
     # Miscellaneous.
     parser.add_argument('--log_step', type=int, default=10)
     parser.add_argument('--pretrained', type=str, default=None)
+    parser.add_argument('--outfile-path', type=str, default='generator.pth')
 
     config = parser.parse_args()
     print(config)
