@@ -119,6 +119,8 @@ class Solver(object):
                 for tag in keys:
                     log += ", {}: {:.4f}".format(tag, loss[tag])
                 print(log)
+        print('saving model...')
+        torch.save(self.G.state_dict(),'generator.pth')
                 
 
     
