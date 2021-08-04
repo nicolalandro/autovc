@@ -19,6 +19,7 @@ class Solver(object):
         self.dim_emb = config.dim_emb
         self.dim_pre = config.dim_pre
         self.freq = config.freq
+        self.pretrained = config.pretrained
 
         # Training configurations.
         self.batch_size = config.batch_size
@@ -34,9 +35,11 @@ class Solver(object):
 
             
     def build_model(self):
-        
-        self.G = Generator(self.dim_neck, self.dim_emb, self.dim_pre, self.freq)        
-        
+        self.G = Generator(self.dim_neck, self.dim_emb, self.dim_pre, self.freq)   
+        if self.pretrained:
+            print('load pretrained...')  
+            g_checkpoint = torch.load(self.pretrained, map_location='cpu')
+            self.G.load_state_dict(g_checkpoint['model'])
         self.g_optimizer = torch.optim.Adam(self.G.parameters(), 0.0001)
         
         self.G.to(self.device)

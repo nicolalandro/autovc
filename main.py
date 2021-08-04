@@ -40,6 +40,7 @@ if __name__ == '__main__':
     
     # Miscellaneous.
     parser.add_argument('--log_step', type=int, default=10)
+    parser.add_argument('--pretrained', type=str, default=None)
 
     config = parser.parse_args()
     print(config)
