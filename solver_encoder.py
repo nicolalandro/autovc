@@ -125,7 +125,7 @@ class Solver(object):
                 for tag in keys:
                     log += ", {}: {:.4f}".format(tag, loss[tag])
                 print(log)
-                print('saving model...')
+                print('\tsaving model...')
                 torch.save(self.G.state_dict(), self.outfile_path + '.tmp_{i}')
         print('saving model...')
         torch.save(self.G.state_dict(), self.outfile_path)

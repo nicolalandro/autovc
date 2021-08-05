@@ -77,5 +77,5 @@ for subdir in sorted(subdirList):
             # save spect    
             np.save(os.path.join(targetDir, subdir, f"{tmp_folder}_" + fileName[:-4]),
                     S.astype(np.float32), allow_pickle=False)    
-
+print('END')
         

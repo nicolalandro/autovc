@@ -62,4 +62,5 @@ for speaker in sorted(subdirList):
     
 with open(os.path.join(rootDir, 'train.pkl'), 'wb') as handle:
     pickle.dump(speakers, handle)
+print('END')
 
