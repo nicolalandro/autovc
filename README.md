@@ -48,7 +48,7 @@ CUDA_VISIBLE_DEVICES="0"  nohup python make_metadata.py --root-dir="/home/super/
 !wget https://github.com/nicolalandro/autovc/releases/download/0.1/autovc.ckpt
 CUDA_VISIBLE_DEVICES="0"  nohup python main.py --data_dir="/home/super/datasets-nas/Vox2celeb/vox2celeb-1/spmel" \
     --outfile-path="/home/super/Models/autovc_voxceleb/generator.pth" \
-    --num_iters 10000 --dim_neck 32 --dim_emb 256 --dim_pre 512 --freq 32 --pretrained "autovc.ckpt" \
+    --num_iters 10000 --batch_size=10 --dim_neck 32 --dim_emb 256 --dim_pre 512 --freq 32 --pretrained "autovc.ckpt" \
      > train.log 2>&1 &!
 ```
 

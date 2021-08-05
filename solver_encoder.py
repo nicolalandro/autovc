@@ -78,10 +78,11 @@ class Solver(object):
                 x_real, emb_org = next(data_iter)
             except:
                 data_iter = iter(data_loader)
+                print(data_iter)
                 x_real, emb_org = next(data_iter)
             
             
-            x_real = x_real.to(self.device) 
+            x_real = x_real.to(self.device)
             emb_org = emb_org.to(self.device) 
                         
        
@@ -93,8 +94,8 @@ class Solver(object):
                         
             # Identity mapping loss
             x_identic, x_identic_psnt, code_real = self.G(x_real, emb_org, emb_org)
-            g_loss_id = F.mse_loss(x_real, x_identic)   
-            g_loss_id_psnt = F.mse_loss(x_real, x_identic_psnt)   
+            g_loss_id = F.mse_loss(x_real, x_identic.squeeze(1))   
+            g_loss_id_psnt = F.mse_loss(x_real, x_identic_psnt.squeeze(1))   
             
             # Code semantic loss.
             code_reconst = self.G(x_identic_psnt, emb_org, None)
@@ -126,7 +127,7 @@ class Solver(object):
                     log += ", {}: {:.4f}".format(tag, loss[tag])
                 print(log)
                 print('\tsaving model...')
-                torch.save(self.G.state_dict(), self.outfile_path + '.tmp_{i}')
+                torch.save(self.G.state_dict(), self.outfile_path + f'.tmp_{i}')
         print('saving model...')
         torch.save(self.G.state_dict(), self.outfile_path)
                 
