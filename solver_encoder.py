@@ -78,7 +78,6 @@ class Solver(object):
                 x_real, emb_org = next(data_iter)
             except:
                 data_iter = iter(data_loader)
-                print(data_iter)
                 x_real, emb_org = next(data_iter)
             
             
@@ -127,7 +126,7 @@ class Solver(object):
                     log += ", {}: {:.4f}".format(tag, loss[tag])
                 print(log)
                 print('\tsaving model...')
-                torch.save(self.G.state_dict(), self.outfile_path + f'.tmp_{i}')
+                torch.save(self.G.state_dict(), self.outfile_path + f'.tmp')
         print('saving model...')
         torch.save(self.G.state_dict(), self.outfile_path)
                 
