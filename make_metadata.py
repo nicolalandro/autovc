@@ -7,6 +7,12 @@ from model_bl import D_VECTOR
 from collections import OrderedDict
 import numpy as np
 import torch
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--root-dir', type=str, default='./spmel')
+args = parser.parse_args()
+
 
 C = D_VECTOR(dim_input=80, dim_cell=768, dim_emb=256).eval().cuda()
 c_checkpoint = torch.load('3000000-BL.ckpt')
@@ -19,7 +25,7 @@ num_uttrs = 10
 len_crop = 128
 
 # Directory containing mel-spectrograms
-rootDir = './spmel'
+rootDir = args.root_dir
 dirName, subdirList, _ = next(os.walk(rootDir))
 print('Found directory: %s' % dirName)
 

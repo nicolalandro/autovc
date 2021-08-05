@@ -32,3 +32,22 @@ It aim to write an easy usable demo of this models.
 * [Speacker Encoder](https://github.com/nicolalandro/autovc/releases/download/0.1/3000000-BL.ckpt)
 * [WaveNet Vocoder](https://github.com/nicolalandro/autovc/releases/download/0.1/checkpoint_step001000000_ema.pth)
 
+## Train on VoxCeleb
+```
+# make spect files (do it one times)
+nohup python make_spect_for_vox_cel.py \
+    --root-dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/wav" \
+    --target-dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/spmel" \
+    > make_spec.log 2>&1 &!
+
+# make train.pkl file (do it one times)
+wget https://github.com/nicolalandro/autovc/releases/download/0.1/3000000-BL.ckpt
+CUDA_VISIBLE_DEVICES="0"  nohup python make_metadata.py --root-dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/spmel" \
+    > make_metadata.log 2>&1 &!
+
+!wget https://github.com/nicolalandro/autovc/releases/download/0.1/autovc.ckpt
+CUDA_VISIBLE_DEVICES="0"  nohup python main.py --data_dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/spmel" \
+    --num_iters 10000 --dim_neck 32 --dim_emb 256 --dim_pre 512 --freq 32 --pretrained "autovc.ckpt" \
+     > train.log 2>&1 &!
+```
+
