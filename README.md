@@ -36,17 +36,18 @@ It aim to write an easy usable demo of this models.
 ```
 # make spect files (do it one times)
 nohup python make_spect_for_vox_cel.py \
-    --root-dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/wav" \
-    --target-dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/spmel" \
+    --root-dir="/home/super/datasets-nas/Vox2celeb/vox2celeb-1/wav" \
+    --target-dir="/home/super/datasets-nas/Vox2celeb/vox2celeb-1/spmel" \
     > make_spec.log 2>&1 &!
 
 # make train.pkl file (do it one times)
 wget https://github.com/nicolalandro/autovc/releases/download/0.1/3000000-BL.ckpt
-CUDA_VISIBLE_DEVICES="0"  nohup python make_metadata.py --root-dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/spmel" \
+CUDA_VISIBLE_DEVICES="0"  nohup python make_metadata.py --root-dir="/home/super/datasets-nas/Vox2celeb/vox2celeb-1/spmel" \
     > make_metadata.log 2>&1 &!
 
 !wget https://github.com/nicolalandro/autovc/releases/download/0.1/autovc.ckpt
-CUDA_VISIBLE_DEVICES="0"  nohup python main.py --data_dir="/media/mint/Barracuda/Datasets/VoxCeleb/nas_data/spmel" \
+CUDA_VISIBLE_DEVICES="0"  nohup python main.py --data_dir="/home/super/datasets-nas/Vox2celeb/vox2celeb-1/spmel" \
+    --outfile-path="/home/super/Models/autovc_voxceleb/generator.pth" \
     --num_iters 10000 --dim_neck 32 --dim_emb 256 --dim_pre 512 --freq 32 --pretrained "autovc.ckpt" \
      > train.log 2>&1 &!
 ```
