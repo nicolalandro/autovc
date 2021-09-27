@@ -77,7 +77,7 @@ for subdir in sorted(subdirList):
                 D_db = 20 * np.log10(np.maximum(min_level, D_mel)) - 16
                 S = np.clip((D_db + 100) / 100, 0, 1)    
                 # save spect    
-                np.save(os.path.join(targetDir, subdir, f"{tmp_folder}_" + fileName[:-4]),
+                np.save(os.path.join(targetDir, subdir, f"{tmp_folder}_{tmp_folder2}_" + fileName[:-4]),
                         S.astype(np.float32), allow_pickle=False)    
 print('END')
         
