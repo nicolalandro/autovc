@@ -13,7 +13,7 @@ It aim to write an easy usable demo of this models.
   * download models into cloned folder
   * run jupyter
   * Demo.ipynb: take two audio and generate the new one with the voice of the second and the words of the first
-* Train on Colab: * Open on Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nicolalandro/autovc/blob/master/TrainAutoVC.ipynb)
+* Train on Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nicolalandro/autovc/blob/master/TrainAutoVC.ipynb)
 
 ## Dependencies
 - Python 3
