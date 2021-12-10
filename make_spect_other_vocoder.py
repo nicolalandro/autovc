@@ -37,7 +37,7 @@ def melspectrogram(
 # audio file directory
 rootDir = './wavs'
 # spectrogram directory
-targetDir = './spmel'
+targetDir = './spmel_other'
 
 dirName, subdirList, _ = next(os.walk(rootDir))
 print('Found directory: %s' % dirName)
