@@ -62,5 +62,6 @@ cp spmel/train.pkl spmel_other # copy the spmel/train.pkl into spmel_other/train
 CUDA_VISIBLE_DEVICES="0" python3.8 main.py --data_dir="spmel_other" \
     --outfile-path="/home/super/Models/autovc_simple/generator.pth" \
     --num_iters 10000 --batch_size=6 --dim_neck 32 --dim_emb 256 --dim_pre 512 --freq 32
+CUDA_VISIBLE_DEVICES="0" python3.8 test_audio.py
 ```
 
