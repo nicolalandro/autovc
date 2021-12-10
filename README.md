@@ -53,3 +53,14 @@ CUDA_VISIBLE_DEVICES="0"  nohup python main.py --data_dir="/home/super/datasets-
      > train.log 2>&1 &!
 ```
 
+## Train with new vocoder
+```
+python3.8 make_spect.py # create folder spmel
+python3.8 make_spect_other_vocoder.py # create the folder spmel_other
+CUDA_VISIBLE_DEVICES="0" python3.8 make_metadata.py --root-dir="./spmel" # create the spmel/train.pkl # use speaker encoder on /spmel
+cp spmel/train.pkl spmel_other # copy the spmel/train.pkl into spmel_other/train.pkl
+CUDA_VISIBLE_DEVICES="0" python3.8 main.py --data_dir="spmel_other" \
+    --outfile-path="/home/super/Models/autovc_simple/generator.pth" \
+    --num_iters 10000 --batch_size=6 --dim_neck 32 --dim_emb 256 --dim_pre 512 --freq 32
+```
+
